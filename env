@@ -1,0 +1,2 @@
+PORT=3001
+DATABASE_URL=postgresql://flora_db_1o67_user:wqCtcsw4PFusRfnszifG0qQgpRJmepho@dpg-d95vufrtqb8s7385i1vg-a.frankfurt-postgres.render.com/flora_db_1o67
