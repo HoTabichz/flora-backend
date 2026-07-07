@@ -1,6 +1,12 @@
 const { Sequelize } = require('sequelize');
 
-const dbUrl = process.env.DATABASE_URL || 'postgresql://flora_db_1o67_user:wqCtcsw4PFusRfnszifG0qQgpRJmepho@dpg-d95vufrtqb8s7385i1vg-a.frankfurt-postgres.render.com/flora_db_1o67';
+const dbUrl = process.env.DATABASE_URL;
+
+if (!dbUrl) {
+  console.error('DATABASE_URL is not set. Add it to your .env file (locally) or to the Environment Variables of your Render service (in production).');
+  process.exit(1);
+}
+
 const sequelize = new Sequelize(dbUrl, {
   dialect: 'postgres',
   dialectOptions: {
